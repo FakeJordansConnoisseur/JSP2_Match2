@@ -1,6 +1,23 @@
-.grid{
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color:#70b6f4;
+}
 
-    display:grid;
-    grid-template-columns: 200px 200px 200px 200px 200px;
-    margin: auto;
+/*Styles the grid of the game*/
+.grid{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px 200px;
+    margin: 0;
+    border: none;
+}
+.grid button {
+    height: 200px;
+    width: 200px;
+}
+
+img {
+    height: 190px;
+    width: 190px;
 }
