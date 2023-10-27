@@ -1,17 +1,33 @@
 h1 {
     text-align: center;
     font-size: 50px;
-    color:#70b6f4;
+    color:rgb(3, 46, 83);
 }
 
 /*Styles the grid of the game*/
-.grid{
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    grid-template-rows: 200px 200px 200px 200px;
-    margin: 0;
-    border: none;
+.b{
+    text-align: center;
+    
 }
+
+.grid{
+    display:grid;
+    grid-template-columns: 200px 200px 200px 200px ;
+    grid-template-rows: 200px 200px 200px 200px ;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    grid-gap: 8px;
+}
+.grid > div {
+    align-items: center;
+    background-color:rgb(141, 253, 141);
+    border:  5px solid rgb(4, 129, 0);
+    color: white;
+    display: flex;
+    font-size: 2em;
+    justify-content: center;
+  }
 .grid button {
     height: 200px;
     width: 200px;
