@@ -19,7 +19,7 @@ h1 {
     margin: auto;
     grid-gap: 8px;
 }
-.grid > div {
+.square {
     align-items: center;
     background-color:rgb(141, 253, 141);
     border:  5px solid rgb(4, 129, 0);

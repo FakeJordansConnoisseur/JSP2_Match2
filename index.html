@@ -2,39 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="style.css" rel="stylesheet" />
     <script src="script.js"></script>
     <title>Document</title>
-
 </head>
-<body onload="initialize();"; class="b";>
+<body>
     <h1>Match Game</h1></h1>
     <h2>Game Rules:</h2> 
     <h4>Match the pictures beneath the grid!</h4>
 
     <div class="grid">
-        <div class="square"> <button id="1"> <img1> </button> </div>
-        <div class="square"> <button id="2"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="3"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="4"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="5"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="6"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="7"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="8"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="9"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="10"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="11"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="12"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="13"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="14"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="15"> <img src="question.png"/> </button> </div>
-        <div class="square"> <button id="16"> <img src="question.png"/> </button> </div>
+        <div id = "a1">
+            <img class="square" onclick="flipSquare(1);" id="1" src="question.png"/> 
+        </div>
+        <div id = "a2">
+            <img class="square" onclick="flipSquare(2);" id="2" src="question.png"/> 
+        </div>
+        <div id = "a3">
+            <img class="square" onclick="flipSquare(3);" id="3" src="question.png"/> 
+        </div>
+        <div id = "a4">
+            <img class="square" onclick="flipSquare(4);" id="4" src="question.png"/> 
+        </div>
+        <div id = "b1">
+            <img class="square" onclick="flipSquare(5);" id="5" src="question.png"/> 
+        </div>
+        <div id = "b2">
+            <img class="square" onclick="flipSquare(6);" id="6" src="question.png"/> 
+        </div>
+        <div id = "b3">
+            <img class="square" onclick="flipSquare(7);" id="7" src="question.png"/> 
+        </div>
+        <div id = "b4">
+            <img class="square" onclick="flipSquare(8);" id="8" src="question.png"/>  
+        </div>
+        <div id = "c1">
+            <img class="square" onclick="flipSquare(9);" id="9" src="question.png"/> 
+        </div>
+        <div id = "c2">
+            <img class="square" onclick="flipSquare(10);" id="10" src="question.png"/> 
+        </div>
+        <div id = "c3">
+            <img class="square" onclick="flipSquare(11);" id="11" src="question.png"/> 
+        </div>
+        <div id = "c4">
+            <img class="square" onclick="flipSquare(12);" id="12" src="question.png"/> 
+        </div>
+        <div id = "d1">
+            <img class="square" onclick="flipSquare(13);" id="13" src="question.png"/> 
+        </div>
+        <div id = "d2">
+            <img class="square" onclick="flipSquare(14);" id="14" src="question.png"/> 
+        </div>
+        <div id = "d3">
+            <img class="square" onclick="flipSquare(15);" id="15" src="question.png"/> 
+        </div>
+        <div id = "d4">
+            <img class="square" onclick="flipSquare(16);" id="16" src="question.png"/> 
+        </div>
     </div>
-
+    
+    <!--Bottom of the grid-->
     <h4 id="score">Score: </h4>
     <button onclick="reset();">Reset Game</button>
-    <script>hiddenImages()</script>
 </body>
 </html>
