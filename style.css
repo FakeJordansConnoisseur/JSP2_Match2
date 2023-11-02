@@ -1,15 +1,28 @@
+body {
+    text-align: center;
+    background-color: rgb(197, 255, 190);
+    color: rgb(4, 46, 2);
+}
 h1 {
     text-align: center;
     font-size: 50px;
-    color:rgb(3, 46, 83);
+    color:rgb(3, 83, 39);
 }
-
-/*Styles the grid of the game*/
-.b{
+h3 {
     text-align: center;
-    
+    font-size: 40px;
 }
 
+button {
+    background-color: rgb(71, 226, 71);
+    border-radius: 100px;
+    display: inline-block;
+    color: rgb(4, 46, 2);
+    font-size: 18px;
+    box-shadow: 10px 10px 5px lightgreen;
+    padding: 5px 10px;
+}
+/*Styles the grid of the game*/
 .grid{
     display:grid;
     grid-template-columns: 200px 200px 200px 200px ;
@@ -27,12 +40,13 @@ h1 {
     display: flex;
     font-size: 2em;
     justify-content: center;
-  }
+}
 .grid button {
     height: 200px;
     width: 200px;
 }
 
+/*sets the height and width of the image*/
 img {
     height: 190px;
     width: 190px;

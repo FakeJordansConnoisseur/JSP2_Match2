@@ -63,14 +63,23 @@ function flipSquare(id) {
 function scramble(){
         pool = [1,2,3,4,5,6,7,8];
         usage = [2,2,2,2,2,2,2,2];
-        counter = 0;
-        while (counter <= 16){
-        var temp = parseInt(Math.random()*pool.length+1);
-        eval("l"+counter) = temp;
-        usage[temp]--;
-        if (usage[temp]==0){
-
-        }
+        counter = 1;
+        while (counter <= 18){
+            var temp = parseInt(Math.random()*pool.length+1);
+            eval(("l"+counter ) + "="+ pool[temp-1]);
+            usage[temp-1]--;
+            console.log("u",usage);
+            console.log("p",pool)
+            if (usage[temp-1]==0){
+                pool.splice(temp-1,1);
+                usage.splice(temp-1,1);
+                console.log(usage);
+                console.log(pool);
+                console.log(temp)
+                console.log(counter)
+            }
+            console.log("c", counter);
+            counter++;
         }
 }
 
