@@ -20,7 +20,7 @@ l15 = 0;
 l16 = 0;
 
 
-function flipSquare(id) {    
+function flipSquare(id) {  
     //changes the image of the squares
     if(id == l1 || id == l9) {
         document.getElementById(id).src = "panda1.jpeg";
@@ -46,41 +46,32 @@ function flipSquare(id) {
     if(id == l8 || id == l16) {
         document.getElementById(id).src = "torpedorat.gif.MOV";
     }
-    
 
-    if(flippedOver == 0) {
-        if(square1 !== id) {   
-            square1 = id;
+    //checks how many squares are flipped over
+    idClass = document.getElementById(id).classList.contains("matched");
+    if(!idClass) {     //makes sure that the picture flipped over isn't already matched
+        if(flippedOver == 0) {
+            if(square1 !== id) {   
+                square1 = id;
+                flippedOver++;
+            }
+        } else if(flippedOver == 1) {
+            square2 = id;
             flippedOver++;
+            matchSquares(square1, square2);
         }
-    } else if(flippedOver == 1) {
-        square2 = id;
-        flippedOver++;
-        matchSquares(square1, square2);
     }
+    
 }
 
+const pool = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 function scramble(){
-        pool = [1,2,3,4,5,6,7,8];
-        usage = [2,2,2,2,2,2,2,2];
-        counter = 1;
-        while (counter <= 18){
-            var temp = parseInt(Math.random()*pool.length+1);
-            eval(("l"+counter ) + "="+ pool[temp-1]);
-            usage[temp-1]--;
-            console.log("u",usage);
-            console.log("p",pool)
-            if (usage[temp-1]==0){
-                pool.splice(temp-1,1);
-                usage.splice(temp-1,1);
-                console.log(usage);
-                console.log(pool);
-                console.log(temp)
-                console.log(counter)
-            }
-            console.log("c", counter);
-            counter++;
-        }
+    const pool = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+    for(i = 1; i <=16; i++) {
+        temp = parseInt(Math.random() * pool.length);
+        eval(("l"+i ) + "="+ pool[temp]);
+        pool.splice(temp, 1);
+    }
 }
 
 //checks to see if the squares match
@@ -89,8 +80,8 @@ function matchSquares() {
     score++;
     document.getElementById("score").innerHTML = "Score: " + score;
     if(document.getElementById(square1).src == document.getElementById(square2).src) {
-        document.getElementById(square1).removeAttribute("onclick");
-        document.getElementById(square2).removeAttribute("onclick");
+        document.getElementById(square1).classList.add("matched");
+        document.getElementById(square2).classList.add("matched");
     } else {        //sets the image back to the question mark
         setTimeout(delayedreset,1000);
     }
@@ -109,24 +100,7 @@ function reset() {
     //resets all grid images to question marks
     for(let i = 1; i <= 16; i++) {
         document.getElementById(i).src = "question.png";
+        document.getElementById(i).classList.remove("matched");
     }
-}
-
-
-
-//shuffles the images on the grid
-function hiddenImages(){
-    storage = ["panda1.jpeg","panda2.jpeg", "panda3.jpeg", "panda4.jpeg","fluffyrat.gif.MOV","torpedorat.gif.MOV","grabbedrat.jpeg","staringrat.jpeg"];
-    usage = [2,2,2,2,2,2,2,2];
-    counter = 1;
-    while (counter <= 16){
-        var temp = Math.random()*8;
-        eval("image"+counter).src =  storage[temp];
-        usage[temp]--;
-        if (usage[temp]==0){
-            usage.splice(temp,1);
-        }
-    }
-    document.getElementById("1").innerHTML.src = img1;
-    
+    scramble();
 }
