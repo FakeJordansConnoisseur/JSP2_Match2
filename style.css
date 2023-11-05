@@ -1,25 +1,30 @@
 body {
     text-align: center;
-    background-color: rgb(197, 255, 190);
-    color: rgb(4, 46, 2);
+    background-color: #588157;
+    color: #dad7cd;
 }
 h1 {
+    padding: 50px;
+    background-color: #344e41;
     text-align: center;
     font-size: 50px;
-    color:rgb(3, 83, 39);
+    text-decoration: underline;
 }
 h3 {
     text-align: center;
     font-size: 40px;
 }
+h4 {
+    font-size: 20px;
+}
 
 button {
-    background-color: rgb(71, 226, 71);
+    background-color: #7bcf78;
     border-radius: 100px;
     display: inline-block;
-    color: rgb(4, 46, 2);
+    color: #02353c;
     font-size: 18px;
-    box-shadow: 10px 10px 5px lightgreen;
+    box-shadow: 5px 5px 5px #6abe67;
     padding: 5px 10px;
 }
 /*Styles the grid of the game*/
@@ -34,8 +39,8 @@ button {
 }
 .square {
     align-items: center;
-    background-color:rgb(141, 253, 141);
-    border:  5px solid rgb(4, 129, 0);
+    background-color:#7bcf78;
+    border:  5px solid #344e41;
     color: white;
     display: flex;
     font-size: 2em;
