@@ -36,6 +36,16 @@ button {
     text-align: center;
     margin: auto;
     grid-gap: 8px;
+    padding-left: 285px;
+}
+.table{
+    display:grid;
+    grid-template-columns: 85% 15% ;
+    justify-content: center;
+    text-align: center;
+/* 
+    margin: auto;
+    grid-gap: 8px; */
 }
 .square {
     align-items: center;
@@ -55,4 +65,15 @@ button {
 img {
     height: 190px;
     width: 190px;
+}
+table {
+    border:thick solid #137e2e;
+    border-collapse:collapse;
+    width:12.5%;
+}
+
+th,td {
+    border:thick solid #137e2e;
+    padding: 8px;
+    width:50%;
 }
