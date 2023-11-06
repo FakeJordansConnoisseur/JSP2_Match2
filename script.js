@@ -1,4 +1,5 @@
 score = 0;
+attempts = 0;
 flippedOver = 0;    //how many cards are flipped
 square1 = 0;
 square2 = 0;
@@ -41,10 +42,10 @@ function flipSquare(id) {
         document.getElementById(id).src = "staringrat.jpeg";
     }
     if(id == l7 || id == l15) {
-        document.getElementById(id).src = "fluffyrat.gif.MOV";
+        document.getElementById(id).src = "fluffyrat.png";
     }
     if(id == l8 || id == l16) {
-        document.getElementById(id).src = "torpedorat.gif.MOV";
+        document.getElementById(id).src = "torpedorat.png";
     }
 
     //checks how many squares are flipped over
@@ -64,10 +65,9 @@ function flipSquare(id) {
     
 }
 
-const pool = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 function scramble(){
-    const pool = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
-    for(i = 1; i <=16; i++) {
+    let pool = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+    for(let i = 1; i <=16; i++) {
         temp = parseInt(Math.random() * pool.length);
         eval(("l"+i ) + "="+ pool[temp]);
         pool.splice(temp, 1);
@@ -86,6 +86,7 @@ function matchSquares() {
         setTimeout(delayedreset,1000);
     }
 }
+
 function delayedreset(){
     document.getElementById(square1).src = "question.png";
     document.getElementById(square2).src = "question.png";
@@ -93,6 +94,15 @@ function delayedreset(){
 }
 //resets the game
 function reset() {
+    attempts++;
+    diceTable = document.getElementById("tab");
+    var newRow = diceTable.insertRow();
+    var newCell = newRow.insertCell();
+    newCell.innerHTML = attempts;
+    newCell = newRow.insertCell();
+    newCell.innerHTML = score;
+    // js3, lesson 6
+
     score = 0;
     flippedOver = 0;
     square1 = square2 = "";
